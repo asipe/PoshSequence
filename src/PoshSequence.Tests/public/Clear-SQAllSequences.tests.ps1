@@ -1,11 +1,11 @@
-Describe 'Get-SQCurrentSequenceValue' {
+Describe 'Clear-SQAllSequences' {
   BeforeEach {
-    Clear-SQAllSequence
+    Clear-SQAllSequences
   }
 
   Context 'usage' {
     It 'clears all sequence values when none defined' {
-      Clear-SQAllSequence | Should Be $null
+      Clear-SQAllSequences | Should Be $null
       Get-SQCurrentSequenceValue | Should Be 0
     }
 
@@ -14,7 +14,7 @@ Describe 'Get-SQCurrentSequenceValue' {
       Get-SQNextSequenceValue | Should Be 1
       Get-SQNextSequenceValue -SequenceName 'a' | Should Be 0
       Get-SQNextSequenceValue -SequenceName 'a' | Should Be 1
-      Clear-SQAllSequence | Should Be $null
+      Clear-SQAllSequences | Should Be $null
       Get-SQCurrentSequenceValue | Should Be 0
       Get-SQCurrentSequenceValue -SequenceName 'a' | Should Be 0
     }

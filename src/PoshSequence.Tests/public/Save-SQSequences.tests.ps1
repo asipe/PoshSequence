@@ -1,7 +1,7 @@
 Describe 'Save-SQSequences' {
   Context 'usage' {
     BeforeEach {
-      Clear-SQAllSequence
+      Clear-SQAllSequences
       $path = Join-Path $TestDrive 'sequences.json'
     }
 

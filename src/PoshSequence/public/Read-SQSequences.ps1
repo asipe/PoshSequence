@@ -2,7 +2,7 @@ Function Read-SQSequences {
   [CmdletBinding()]
   Param([Parameter(Mandatory=$true)] [string]$Path)
 
-  Clear-SQAllSequence
+  Clear-SQAllSequences
 
   $obj = Get-Content -Path $Path -Raw | 
     ConvertFrom-Json

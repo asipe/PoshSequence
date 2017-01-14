@@ -1,6 +1,6 @@
 Describe 'Clear-SQSequence' {
   BeforeEach {
-    Clear-SQAllSequence
+    Clear-SQAllSequences
   }
 
   Context 'usage' {

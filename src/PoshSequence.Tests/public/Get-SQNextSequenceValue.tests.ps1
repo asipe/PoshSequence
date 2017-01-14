@@ -1,6 +1,6 @@
 Describe 'Get-SQNextSequenceValue' {
   BeforeEach {
-    Clear-SQAllSequence
+    Clear-SQAllSequences
   }
 
   Context 'usage' {

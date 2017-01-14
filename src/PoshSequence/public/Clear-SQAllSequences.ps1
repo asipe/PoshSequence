@@ -1,4 +1,4 @@
-Function Clear-SQAllSequence {
+Function Clear-SQAllSequences {
   [CmdletBinding()]
   Param()
 

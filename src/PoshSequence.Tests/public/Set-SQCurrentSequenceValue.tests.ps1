@@ -1,7 +1,7 @@
 Describe 'Set-SQCurrentSequenceValue' {
   Context 'usage' {
     BeforeEach {
-      Clear-SQAllSequence
+      Clear-SQAllSequences
     }
 
     It 'sets default value when it was never set before' {

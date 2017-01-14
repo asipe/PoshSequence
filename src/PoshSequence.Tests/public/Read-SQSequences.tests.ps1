@@ -1,13 +1,13 @@
 Describe 'Read-SQSequences' {
   Context 'usage' {
     BeforeEach {
-      Clear-SQAllSequence
+      Clear-SQAllSequences
       $path = Join-Path $TestDrive 'sequences.json'
     }
 
     It 'loads empty sequences' {
       Save-SQSequences -Path $path | Should Be $null
-      Clear-SQAllSequence
+      Clear-SQAllSequences
       Get-SQNextSequenceValue | Should Be 0
       Get-SQNextSequenceValue | Should Be 1
       Read-SQSequences -Path $path | Should Be $null
@@ -18,7 +18,7 @@ Describe 'Read-SQSequences' {
       Set-SQCurrentSequenceValue -SequenceName 'a' -Value 10
       Set-SQCurrentSequenceValue -SequenceName 'b' -Value 20
       Save-SQSequences -Path $path | Should Be $null
-      Clear-SQAllSequence
+      Clear-SQAllSequences
       Get-SQCurrentSequenceValue -SequenceName 'a' | Should Be 0
       Get-SQCurrentSequenceValue -SequenceName 'b' | Should Be 0
       Read-SQSequences -Path $path | Should Be $null
