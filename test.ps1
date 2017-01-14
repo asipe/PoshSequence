@@ -1,11 +1,10 @@
 Set-StrictMode -Version 'Latest'
-
 $ErrorActionPreference = 'Stop'
 
 $srcDir = Join-Path $PSScriptRoot 'src'
 $testDir = Join-Path $srcDir 'PoshSequence.Tests'
-$poshSequenceModulePath = Join-Path $srcDir 'PoshSequence\PoshSequence.psm1'
-$pesterModulePath = Join-Path $PSScriptRoot '.\thirdparty\pester_bin\Pester.psm1'
+$poshSequenceModulePath = Join-Path $srcDir 'PoshSequence'
+$pesterModulePath = Join-Path $PSScriptRoot 'thirdparty\pester'
 
 Import-Module -Name $pesterModulePath,$poshSequenceModulePath -Force
 
