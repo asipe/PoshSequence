@@ -36,5 +36,12 @@ Describe 'Read-SQSequences' {
       Get-SQCurrentSequenceValue -SequenceName 'b' | Should Be 20
       Get-SQCurrentSequenceValue -SequenceName 'c' | Should Be 0
     }
+
+    It 'will create an empty sequence file if the specified path does not exist and InitializeEmptyIfFileDoesNotExist is true' {
+      Remove-Item -LiteralPath $path
+      Read-SQSequences -Path $path -InitializeEmptyIfFileDoesNotExist $true
+      Test-Path -Path $path -PathType Leaf | Should Be $true
+      Get-Content -Path $path -Raw | Should Be "{}`r`n"
+    }
   }
 }
